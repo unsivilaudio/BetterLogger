@@ -13,6 +13,7 @@
 ## Usage
 
 ```
+const Logger = require('better-logger');
 const log = new Logger('ServiceName');
 
 // Log an INFO message
