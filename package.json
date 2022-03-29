@@ -1,0 +1,23 @@
+{
+    "name": "better-logger",
+    "version": "1.0.0",
+    "description": "A simple logging solution",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^17.0.23",
+        "typescript": "^4.6.3"
+    },
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "path": "^0.12.7"
+    },
+    "files": [
+        "dist/**/*"
+    ]
+}
