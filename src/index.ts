@@ -1,3 +1,1 @@
-import Logger from './logger';
-
-const log = new Logger('Logger');
+export * as Logger from './logger';
