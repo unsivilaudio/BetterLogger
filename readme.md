@@ -39,14 +39,19 @@ _Current Message Format_
 
 The logger receives an optional options object as the 2nd parameter.
 
-|  @param   |  @type  | Default | Note                                                        |
-| :-------: | :-----: | :-----: | :---------------------------------------------------------- |
-|  logfile  | boolean |  FALSE  | enable file logging                                         |
-|  logPath  | string  |  NULL   | required with logFile, absolute path to store log files     |
-|  logUTC   | boolean |  TRUE   | enable log time in UTC                                      |
-| logColors | object  |  null   | define the log colors <sup><a href='#color'>props</a></sup> |
+|  @param   |  @type  | Default | Note                                                    |
+| :-------: | :-----: | :-----: | :------------------------------------------------------ |
+|  logfile  | boolean |  FALSE  | enable file logging                                     |
+|  logPath  | string  |  NULL   | required with logFile, absolute path to store log files |
+|  logUTC   | boolean |  TRUE   | enable log time in UTC                                  |
+| logColors | object  |  null   | define the log colors <sup>[props](#color)</sup>        |
 
-> <span id='color' /> info: \<string\> _default_ - yellow </br> error: \<string\> _default_ - red </br> warn: \<string\> _default_ - white </br> date: \<string\> _default_ - magenta </br>
+<span id='color' />
+
+> info: \<string\> _default_ - yellow </br>
+> error: \<string\> _default_ - red </br>
+> warn: \<string\> _default_ - white </br>
+> date: \<string\> _default_ - magenta </br>
 
 #### Available Colors
 

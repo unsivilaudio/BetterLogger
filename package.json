@@ -1,10 +1,11 @@
 {
-    "name": "better-logger",
+    "name": "better-loggger-test",
     "version": "1.0.0",
     "description": "A simple logging solution",
-    "main": "index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "tsc -b"
     },
     "keywords": [],
     "author": "",
