@@ -3,6 +3,15 @@ import { writeFile } from './services/file-manager';
 import LogTypes from './statics/types';
 import colorize, { LogColors } from './util/colorize';
 
+/**
+ *  LogOptions
+ *
+ *  @param logfile - _optional_ - Log to file Default: FALSE,
+ *  @param logPath - required with logfile enabled
+ *  @param logUTC - use UTC timezone format for date string
+ *  @param logColors - object - configure colors for logging
+ *          info/error/warn/date strings
+ */
 export interface LogOptions {
     logFile: boolean;
     logPath: string;
@@ -14,7 +23,9 @@ export interface LogOptions {
         date: LogColors;
     };
 }
-
+/**
+ *  Logger Class
+ */
 class Logger {
     private serviceName: string;
     private logFile: boolean;
@@ -27,6 +38,12 @@ class Logger {
         date: LogColors;
     };
 
+    /**
+     * Logger Constuctor
+     * @param serviceName
+     * @param options
+     * @return Logger
+     */
     constructor(serviceName: string, options?: LogOptions) {
         this.serviceName = serviceName;
         this.logFile = options?.logFile || false;
@@ -39,17 +56,28 @@ class Logger {
             date: options?.logColors?.date || LogColors.MAGENTA,
         };
     }
-
+    /**
+     * Warning Message to dispatch
+     * @param message
+     */
     warn(message: string) {
         const msg = this.build(LogTypes.WARN, message);
         this.dispatch(msg);
     }
 
+    /**
+     * Info Message to dispatch
+     * @param message
+     */
     info(message: string) {
         const msg = this.build(LogTypes.INFO, message);
         this.dispatch(msg);
     }
 
+    /**
+     * Error message to dispatch
+     * @param message
+     */
     error(message: string) {
         const msg = this.build(LogTypes.ERROR, message);
         this.dispatch(msg);

@@ -1,5 +1,9 @@
 import colors from '../statics/colors';
 
+/**
+ * Available Colors
+ * ================
+ */
 export enum LogColors {
     BRIGHT = 'bright',
     RED = 'red',
@@ -11,6 +15,13 @@ export enum LogColors {
     WHITE = 'white',
 }
 
+/**
+ * Inject text with the colored string codes
+ * =========================================
+ * @param color - must match one of the predefined colors
+ * @param text
+ * @returns colored string
+ */
 function colorize(color: LogColors, text: string): string {
     let coloredString = '';
     switch (color) {

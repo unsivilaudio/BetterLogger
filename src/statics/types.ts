@@ -1,3 +1,7 @@
+/**
+ *  Available Log Types
+ *  ===================
+ */
 enum LogTypes {
     INFO = 'INFO',
     WARN = 'WARN',

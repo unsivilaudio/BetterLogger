@@ -1,1 +1,3 @@
-export * as Logger from './logger';
+import Logger from './logger';
+
+module.exports = Logger;

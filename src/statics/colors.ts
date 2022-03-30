@@ -1,3 +1,10 @@
+/**
+ *  Color List obtained from
+ *  https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color
+ *
+ *  Wiki info
+ *  https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+ */
 const colors = {
     Reset: '\x1b[0m',
     Bright: '\x1b[1m',
