@@ -45,7 +45,7 @@ class Logger {
      * @return Logger
      */
     constructor(serviceName: string, options?: LogOptions) {
-        this.serviceName = serviceName;
+        this.serviceName = serviceName.toUpperCase();
         this.logFile = options?.logFile || false;
         this.logPath = options?.logPath || '';
         this.logUTC = options?.logUTC || true;
@@ -87,8 +87,8 @@ class Logger {
         const { info, error, warn, date } = this.logColors;
         const now = this.logUTC
             ? new Date().toUTCString()
-            : new Date().toString();
-        const dateStr = colorize(date, `[${now}]`);
+            : new Date().toLocaleString();
+        const dateStr = colorize(date, `[${now.toUpperCase()}]`);
         let typeStr: string = type.toUpperCase();
         const serviceName = colorize(LogColors.GREEN, `[${this.serviceName}]`);
         switch (type) {
