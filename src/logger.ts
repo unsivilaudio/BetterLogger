@@ -6,17 +6,17 @@ import colorize, { LogColors } from './util/colorize';
 /**
  *  LogOptions
  *
- *  @param logfile - _optional_ - Log to file Default: FALSE,
- *  @param logPath - required with logfile enabled
- *  @param logUTC - use UTC timezone format for date string
- *  @param logColors - object - configure colors for logging
+ *  @param file - _optional_ - Log to file Default: FALSE,
+ *  @param path - _optional*_ - required with logfile enabled
+ *  @param UTC - _optional_ - use UTC timezone format for date string
+ *  @param colors - _optional_ - object - configure colors for logging
  *          info/error/warn/date strings
  */
 export interface LogOptions {
-    logFile?: boolean;
-    logPath?: string;
-    logUTC?: boolean;
-    logColors?: {
+    file?: boolean;
+    path?: string;
+    UTC?: boolean;
+    colors?: {
         info: LogColors;
         error: LogColors;
         warn: LogColors;
@@ -28,10 +28,10 @@ export interface LogOptions {
  */
 class Logger {
     private serviceName: string;
-    private logFile: boolean;
-    private logPath: string;
-    private logUTC: true;
-    private logColors: {
+    private file: boolean;
+    private path: string;
+    private UTC: boolean;
+    private colors: {
         info: LogColors;
         error: LogColors;
         warn: LogColors;
@@ -46,14 +46,14 @@ class Logger {
      */
     constructor(serviceName: string, options?: LogOptions) {
         this.serviceName = serviceName.toUpperCase();
-        this.logFile = options?.logFile || false;
-        this.logPath = options?.logPath || '';
-        this.logUTC = options?.logUTC || true;
-        this.logColors = {
-            info: options?.logColors?.info || LogColors.YELLOW,
-            error: options?.logColors?.error || LogColors.RED,
-            warn: options?.logColors?.warn || LogColors.WHITE,
-            date: options?.logColors?.date || LogColors.MAGENTA,
+        this.file = options?.file || false;
+        this.path = options?.path || '';
+        this.UTC = options?.UTC || true;
+        this.colors = {
+            info: options?.colors?.info || LogColors.YELLOW,
+            error: options?.colors?.error || LogColors.RED,
+            warn: options?.colors?.warn || LogColors.WHITE,
+            date: options?.colors?.date || LogColors.MAGENTA,
         };
     }
     /**
@@ -84,8 +84,8 @@ class Logger {
     }
 
     private build(type: LogTypes, message: string) {
-        const { info, error, warn, date } = this.logColors;
-        const now = this.logUTC
+        const { info, error, warn, date } = this.colors;
+        const now = this.UTC
             ? new Date().toUTCString()
             : new Date().toLocaleString();
         const dateStr = colorize(date, `[${now.toUpperCase()}]`);
@@ -108,11 +108,8 @@ class Logger {
 
     private dispatch(message: string) {
         console.log(message);
-        if (this.logFile) {
-            writeFile(
-                path.join(this.logPath, this.serviceName + '.log'),
-                message
-            );
+        if (this.file) {
+            writeFile(path.join(this.path, this.serviceName + '.log'), message);
         }
     }
 }
