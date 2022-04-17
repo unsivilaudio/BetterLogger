@@ -13,9 +13,9 @@ import colorize, { LogColors } from './util/colorize';
  *          info/error/warn/date strings
  */
 export interface LogOptions {
-    logFile: boolean;
-    logPath: string;
-    logUTC: boolean;
+    logFile?: boolean;
+    logPath?: string;
+    logUTC?: boolean;
     logColors?: {
         info: LogColors;
         error: LogColors;
