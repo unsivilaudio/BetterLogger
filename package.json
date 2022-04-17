@@ -1,6 +1,6 @@
 {
     "name": "express-better-logger",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A simple logging solution",
     "publishConfig": {
         "access": "public"
