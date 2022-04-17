@@ -6,7 +6,7 @@
 
 ## Installation
 
-`npm install --save better-logger`
+`npm install --save express-better-logger`
 </br>
 </br>
 
@@ -33,7 +33,7 @@ _Current Message Format_
 
 [type][date][servicename] [message]
 
-> [INFO][2022-03-29t14:52:15.720z][SERVICENAME] This is an info message.
+> [INFO][2022-03-29T14:52:15.720Z][SERVICENAME] This is an info message.
 
 ## Options
 
@@ -41,10 +41,10 @@ The logger receives an optional options object as the 2nd parameter.
 
 |  @param   |  @type  | Default | Note                                                    |
 | :-------: | :-----: | :-----: | :------------------------------------------------------ |
-|  logfile  | boolean |  FALSE  | enable file logging                                     |
-|  logPath  | string  |  NULL   | required with logFile, absolute path to store log files |
-|  logUTC   | boolean |  TRUE   | enable log time in UTC                                  |
-| logColors | object  |  null   | define the log colors <sup>[props](#color)</sup>        |
+|  file  | boolean |  FALSE  | enable file logging                                     |
+|  path  | string  |  NULL   | required with `file`, __absolute path__ to store log files |
+|  UTC   | boolean |  TRUE   | enable log time in UTC                                  |
+| colors | object  |  null   | define the log colors <sup>[props](#color)</sup>        |
 
 <span id='color' />
 
