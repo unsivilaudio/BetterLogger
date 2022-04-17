@@ -1,3 +1,3 @@
 import Logger from './logger';
 
-module.exports = Logger;
+export default Logger;
