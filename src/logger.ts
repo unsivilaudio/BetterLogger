@@ -86,7 +86,7 @@ class Logger {
     private build(type: LogTypes, message: string) {
         const { info, error, warn, date } = this.colors;
         const now = this.UTC
-            ? new Date().toUTCString()
+            ? new Date().toISOString()
             : new Date().toLocaleString();
         const dateStr = colorize(date, `[${now.toUpperCase()}]`);
         let typeStr: string = type.toUpperCase();
