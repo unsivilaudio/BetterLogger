@@ -1,15 +1,27 @@
 {
-    "name": "better-loggger-test",
+    "name": "express-better-logger",
     "version": "1.0.0",
     "description": "A simple logging solution",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/**/*"
+    ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc -b"
+        "start": "tsc --watch --preserveWatchOutput",
+        "prePublishOnly": "tsc -b"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": [
+        "log",
+        "logger",
+        "colored",
+        "console"
+    ],
+    "author": "@unsivilaudio",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/unsivilaudio/BetterLogger.git"
@@ -25,8 +37,5 @@
     "dependencies": {
         "fs": "^0.0.1-security",
         "path": "^0.12.7"
-    },
-    "files": [
-        "dist/**/*"
-    ]
+    }
 }
